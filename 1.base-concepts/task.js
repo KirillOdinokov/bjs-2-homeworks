@@ -7,10 +7,10 @@ function solveEquation(a, b, c) {
 		const root = -c / b;
 		arr.push(root);
 	} else if (a === 0 && b === 0 && c !== 0) {
-		const root = 'Уравнение не имеет решений'
+		return arr;
 		arr.push(root);
 	} else if (discriminant < 0) {
-		const root = 'Уравнение не имеет корней'
+		return arr;
 		arr.push(root);
 	} else if (discriminant === 0) {
 		const root = -b / (2 * a);
@@ -32,9 +32,10 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 		return 'Проверьте корректность введенных данных'
 	} else {
 		const p = percent / 100 / 12;
-		a = amount - contribution;
+		const a = amount - contribution;
 		const summ = (a * (p + (p / (((1 + p) ** countMonths) - 1))));
-		return summ * countMonths;
+    let rounded = summ.toFixed(2);
+		return rounded * countMonths;
 	}
 }
 
@@ -42,3 +43,6 @@ console.log(calculateTotalMortgage(10, 0, 50000, 12));
 console.log(calculateTotalMortgage(10, 1000, 50000, 12));
 console.log(calculateTotalMortgage(10, 0, 20000, 24));
 console.log(calculateTotalMortgage(10, 1000, 20000, 24));
+console.log(calculateTotalMortgage(10, 20000, 20000, 24));
+console.log(calculateTotalMortgage(10, 0, 10000, 36));
+console.log(calculateTotalMortgage(15, 0, 10000, 36));
