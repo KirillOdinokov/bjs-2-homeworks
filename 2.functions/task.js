@@ -10,7 +10,7 @@ function getArrayParams(...arr) {
 		}
 
 		if (element < min) {
-			min += element;
+			min = element;
 		}
 		sum += element;
 		n++;
