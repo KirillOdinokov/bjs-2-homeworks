@@ -15,7 +15,7 @@ function getArrayParams(...arr) {
 		sum += element;
 		n++;
 	}
-	avg = Math.round((sum / n) * 10) / 10;
+	avg = Math.round((sum / n) * 100) / 100;
 	return {
 		min: min,
 		max: max,
