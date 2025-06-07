@@ -33,9 +33,9 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	} else {
 		const p = percent / 100 / 12;
 		const a = amount - contribution;
-		const summ = (a * (p + (p / (((1 + p) ** countMonths) - 1))));
-    let rounded = summ.toFixed(2);
-		return rounded * countMonths;
+		const summ = ((a * (p + (p / (((1 + p) ** countMonths) - 1)))))*countMonths;
+    let roundedSumm = Math.round(summ*100)/100;
+    return roundedSumm;
 	}
 }
 
