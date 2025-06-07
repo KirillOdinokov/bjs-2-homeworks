@@ -10,7 +10,7 @@ function getArrayParams(...arr) {
 		}
 
 		if (element < min) {
-			min - element;
+			min += element;
 		}
 		sum += element;
 		n++;
@@ -23,7 +23,9 @@ function getArrayParams(...arr) {
 	};
 }
 
-getArrayParams(-99, 99, 10);
+
+getArrayParams(1, 2, 3, -100, 10)  // { min: -100, max: 10, avg: -16.80 }
+getArrayParams(5)  // { min: 5, max: 5, avg: 5 }
 
 function summElementsWorker(...arr) {
 	if (arr.length === 0) {
